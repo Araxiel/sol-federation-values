@@ -12,7 +12,7 @@ const ideologies = [
     {
         "name": "Syndic Coalition",
         "description": "The Syndic Coalition encompasses worker councils, cooperative leagues, mutual-aid societies, and political organizations committed to social ownership. Its members argue that democracy is incomplete when citizens vote in public but obey owners and managers throughout their working lives. Some favour coordinated federal planning, while others imagine a loose federation of self-governing syndics; their common ground is that productive property should answer to the people who use it.",
-        "stats": { "econ": 85, "dipl": 30, "govt": 45, "synd": 95, "ordr": 95 }
+        "stats": { "econ": 85, "dipl": 40, "govt": 45, "synd": 90, "ordr": 95 }
     },
     {
         "name": "Corporate Directorate",
