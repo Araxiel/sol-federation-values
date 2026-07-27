@@ -511,7 +511,7 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "dipl": 3,
             "synd": 0,
             "ordr": -15
         }
