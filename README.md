@@ -1,2 +1,2 @@
-# 8values.github.io
-The 8values Political Quiz measures individuals' political values, including Equality, Nation, Liberty, Tradition, Markets, World, Authority, and Progress.
+# Sol Federation Values Quiz
+Work in Progress Quiz based on 8values.github.io, but using the fictional setting of "Operational Attrition"
