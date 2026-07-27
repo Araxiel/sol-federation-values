@@ -1,10 +1,12 @@
+<!doctype html>
+<html lang="en">
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
 <title>Sol Values</title>
-<link rel="icon" type="x-icon" href="icon.png">
-<link rel="shortcut icon" type="x-icon" href="icon.png">
+<link rel="icon" type="image/png" href="icon.png">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
@@ -17,15 +19,15 @@
     <div class="axis_name valuecolumn">SECURITY</div>
     <div class="axis_name valuecolumn">OWNERSHIP</div>
     <div class="axis_name valuecolumn">CIVIC ORDER</div>
-    <a href="#anchor"><img src="value_images/equality.svg" class="valuecolumn" alt="Federalism"></a>
-    <a href="#anchor"><img src="value_images/nation.svg" class="valuecolumn" alt="Commonwealth"></a>
-    <a href="#anchor"><img src="value_images/liberty.svg" class="valuecolumn" alt="Militarism"></a>
-    <a href="#anchor"><img src="value_images/tradition.svg" class="valuecolumn" alt="Synthesism"></a>
+    <a href="#anchor"><img src="value_images/federalism.svg" class="valuecolumn" alt="Federalism"></a>
+    <a href="#anchor"><img src="value_images/commonwealth.svg" class="valuecolumn" alt="Commonwealth"></a>
+    <a href="#anchor"><img src="value_images/militarism.svg" class="valuecolumn" alt="Militarism"></a>
+    <a href="#anchor"><img src="value_images/synthesism.svg" class="valuecolumn" alt="Synthesism"></a>
     <a href="#anchor"><img src="value_images/feudalism.svg" class="valuecolumn" alt="Feudalism"></a>
-    <a href="#anchor"><img src="value_images/markets.svg" class="valuecolumn" alt="Autonomism"></a>
-    <a href="#anchor"><img src="value_images/globe.svg" class="valuecolumn" alt="Corporatism"></a>
-    <a href="#anchor"><img src="value_images/authority.svg" class="valuecolumn" alt="Defencism"></a>
-    <a href="#anchor"><img src="value_images/progress.svg" class="valuecolumn" alt="Capitalism"></a>
+    <a href="#anchor"><img src="value_images/autonomism.svg" class="valuecolumn" alt="Autonomism"></a>
+    <a href="#anchor"><img src="value_images/corporatism.svg" class="valuecolumn" alt="Corporatism"></a>
+    <a href="#anchor"><img src="value_images/defencism.svg" class="valuecolumn" alt="Defencism"></a>
+    <a href="#anchor"><img src="value_images/capitalism.svg" class="valuecolumn" alt="Capitalism"></a>
     <a href="#anchor"><img src="value_images/universalism.svg" class="valuecolumn" alt="Universalism"></a>
 </div>
 <br>
@@ -194,8 +196,9 @@
 <br>
 
 <!-- This is the script for the page itself -->
-<script type="application/javascript"src="questions.js"></script>
+<script type="application/javascript" src="questions.js"></script>
 <script type="text/javascript">
-    document.getElementById("numOfQuestions").innerHTML = questions.length;
+    document.getElementById("numOfQuestions").textContent = questions.length;
 </script>
 </body>
+</html>

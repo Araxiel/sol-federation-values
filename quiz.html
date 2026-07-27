@@ -1,10 +1,12 @@
+<!doctype html>
+<html lang="en">
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
 <title>Sol Values Quiz</title>
-<link rel="icon" type="x-icon" href="icon.png">
-<link rel="shortcut icon" type="x-icon" href="icon.png">
+<link rel="icon" type="image/png" href="icon.png">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <script type="application/javascript"
@@ -20,7 +22,7 @@
 <button class="button disagree" onclick="next_question(-0.5)">Disagree</button> <br>
 <button class="button stronglyDisagree" onclick="next_question(-1.0)">Strongly Disagree</button> <br>
 <button class="small_button" onclick="prev_question()" id="back_button">Back</button>
-<button class="small_button_off" id="back_button_off">Back</button><br>
+<button class="small_button_off" id="back_button_off" disabled>Back</button><br>
 
 <!-- JavaScript for the test itself -->
 <script>
@@ -41,8 +43,8 @@
         max_ordr += Math.abs(questions[i].effect.ordr)
     }
     function init_question() {
-        document.getElementById("question-text").innerHTML = questions[qn].question;
-        document.getElementById("question-number").innerHTML = "Question " + (qn + 1) + " of " + (questions.length);
+        document.getElementById("question-text").textContent = questions[qn].question;
+        document.getElementById("question-number").textContent = "Question " + (qn + 1) + " of " + (questions.length);
         if (qn == 0) {
             document.getElementById("back_button").style.display = 'none';
             document.getElementById("back_button_off").style.display = 'block';
@@ -76,6 +78,9 @@
     }
 
     function calc_score(score,max) {
+        if (max === 0) {
+            return "50.0"
+        }
         return (100*(max+score)/(2*max)).toFixed(1)
     }
 
@@ -94,3 +99,4 @@
     }
 </script>
 </body>
+</html>

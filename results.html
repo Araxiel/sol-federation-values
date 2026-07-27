@@ -23,6 +23,12 @@
         <p class="results-note">Ideological matching is an experimental, placeholder feature.</p>
     </section>
 
+    <section class="result-export" aria-labelledby="result-export-heading">
+        <h2 id="result-export-heading">Shareable Result</h2>
+        <img id="banner" alt="A shareable image of these Sol Values results">
+        <button class="button" id="download-result" type="button" disabled>Download Results Image</button>
+    </section>
+
     <div class="results-actions">
         <button class="button" type="button" onclick="location.href='quiz.html'">Retake Quiz</button>
         <button class="button secondary-button" type="button" onclick="location.href='index.html'">Back to Home</button>
@@ -52,41 +58,51 @@
             name: "Governance",
             left: "Federalism",
             right: "Autonomism",
-            leftScore: 100 - scores.govt,
-            leftColor: "var(--axis-federalism)",
-            rightColor: "var(--axis-autonomism)"
+            leftScore: scores.govt,
+            leftColor: "--axis-federalism",
+            rightColor: "--axis-autonomism",
+            leftIcon: "value_images/federalism.svg",
+            rightIcon: "value_images/autonomism.svg"
         },
         {
             name: "Political Economy",
             left: "Commonwealth",
             right: "Corporatism",
             leftScore: scores.econ,
-            leftColor: "var(--axis-commonwealth)",
-            rightColor: "var(--axis-corporatism)"
+            leftColor: "--axis-commonwealth",
+            rightColor: "--axis-corporatism",
+            leftIcon: "value_images/commonwealth.svg",
+            rightIcon: "value_images/corporatism.svg"
         },
         {
             name: "Security",
             left: "Militarism",
             right: "Defencism",
-            leftScore: 100 - scores.dipl,
-            leftColor: "var(--axis-militarism)",
-            rightColor: "var(--axis-defencism)"
+            leftScore: scores.dipl,
+            leftColor: "--axis-militarism",
+            rightColor: "--axis-defencism",
+            leftIcon: "value_images/militarism.svg",
+            rightIcon: "value_images/defencism.svg"
         },
         {
             name: "Ownership",
             left: "Synthesism",
             right: "Capitalism",
             leftScore: scores.synd,
-            leftColor: "var(--axis-synthesism)",
-            rightColor: "var(--axis-capitalism)"
+            leftColor: "--axis-synthesism",
+            rightColor: "--axis-capitalism",
+            leftIcon: "value_images/synthesism.svg",
+            rightIcon: "value_images/capitalism.svg"
         },
         {
             name: "Civic Order",
             left: "Feudalism",
             right: "Universalism",
             leftScore: 100 - scores.ordr,
-            leftColor: "var(--axis-feudalism)",
-            rightColor: "var(--axis-universalism)"
+            leftColor: "--axis-feudalism",
+            rightColor: "--axis-universalism",
+            leftIcon: "value_images/feudalism.svg",
+            rightIcon: "value_images/universalism.svg"
         }
     ]
 
@@ -113,6 +129,17 @@
         heading.className = "result-axis-heading"
         heading.textContent = axis.name + ": " + describeAxis(axis)
 
+        const layout = document.createElement("div")
+        layout.className = "result-axis-layout"
+
+        const leftIcon = document.createElement("img")
+        leftIcon.className = "result-axis-icon"
+        leftIcon.src = axis.leftIcon
+        leftIcon.alt = axis.left
+
+        const axisBody = document.createElement("div")
+        axisBody.className = "result-axis-body"
+
         const labels = document.createElement("div")
         labels.className = "result-value-labels"
 
@@ -136,15 +163,23 @@
         const leftBar = document.createElement("div")
         leftBar.className = "result-bar-segment"
         leftBar.style.width = axis.leftScore + "%"
-        leftBar.style.backgroundColor = axis.leftColor
+        leftBar.style.backgroundColor = `var(${axis.leftColor})`
 
         const rightBar = document.createElement("div")
         rightBar.className = "result-bar-segment"
         rightBar.style.width = rightScore + "%"
-        rightBar.style.backgroundColor = axis.rightColor
+        rightBar.style.backgroundColor = `var(${axis.rightColor})`
 
         bar.append(leftBar, rightBar)
-        section.append(heading, labels, bar)
+        axisBody.append(labels, bar)
+
+        const rightIcon = document.createElement("img")
+        rightIcon.className = "result-axis-icon"
+        rightIcon.src = axis.rightIcon
+        rightIcon.alt = axis.right
+
+        layout.append(leftIcon, axisBody, rightIcon)
+        section.append(heading, layout)
         return section
     }
 
@@ -175,7 +210,90 @@
         return closest.name
     }
 
-    document.getElementById("ideology-label").textContent = findClosestIdeology()
+    const closestIdeology = findClosestIdeology()
+    document.getElementById("ideology-label").textContent = closestIdeology
+
+    function loadImage(src) {
+        return new Promise(resolve => {
+            const image = new Image()
+            image.onload = () => resolve(image)
+            image.onerror = () => resolve(null)
+            image.src = src
+        })
+    }
+
+    function cssColor(variable) {
+        return getComputedStyle(document.documentElement).getPropertyValue(variable).trim()
+    }
+
+    async function createShareableImage() {
+        if (document.fonts && document.fonts.ready) await document.fonts.ready
+
+        const canvas = document.createElement("canvas")
+        const context = canvas.getContext("2d")
+        canvas.width = 1000
+        canvas.height = 790
+
+        context.fillStyle = cssColor("--surface-bg")
+        context.fillRect(0, 0, canvas.width, canvas.height)
+        context.fillStyle = cssColor("--heading-text")
+        context.font = "700 48px Montserrat, sans-serif"
+        context.textAlign = "left"
+        context.fillText("Sol Values", 35, 58)
+        context.font = "300 25px Montserrat, sans-serif"
+        context.fillText("Closest Match: " + closestIdeology, 35, 96)
+
+        const iconPairs = await Promise.all(axes.map(async axis => [
+            await loadImage(axis.leftIcon),
+            await loadImage(axis.rightIcon)
+        ]))
+
+        axes.forEach((axis, index) => {
+            const top = 120 + index * 128
+            const barX = 145
+            const barY = top + 54
+            const barWidth = 710
+            const barHeight = 46
+            const rightScore = 100 - axis.leftScore
+
+            context.fillStyle = cssColor("--heading-text")
+            context.font = "700 23px Montserrat, sans-serif"
+            context.textAlign = "center"
+            context.fillText(axis.name + ": " + describeAxis(axis), 500, top + 24)
+
+            context.font = "700 16px Montserrat, sans-serif"
+            context.textAlign = "left"
+            context.fillText(axis.left + " " + formatScore(axis.leftScore), barX, top + 48)
+            context.textAlign = "right"
+            context.fillText(formatScore(rightScore) + " " + axis.right, barX + barWidth, top + 48)
+
+            context.fillStyle = cssColor(axis.leftColor)
+            context.fillRect(barX, barY, barWidth * axis.leftScore / 100, barHeight)
+            context.fillStyle = cssColor(axis.rightColor)
+            context.fillRect(barX + barWidth * axis.leftScore / 100, barY, barWidth * rightScore / 100, barHeight)
+            context.strokeStyle = cssColor("--page-bg")
+            context.lineWidth = 4
+            context.strokeRect(barX, barY, barWidth, barHeight)
+
+            const [leftIcon, rightIcon] = iconPairs[index]
+            if (leftIcon) context.drawImage(leftIcon, 35, top + 17, 92, 92)
+            if (rightIcon) context.drawImage(rightIcon, 873, top + 17, 92, 92)
+        })
+
+        const banner = document.getElementById("banner")
+        banner.src = canvas.toDataURL("image/png")
+
+        const downloadButton = document.getElementById("download-result")
+        downloadButton.disabled = false
+        downloadButton.addEventListener("click", () => {
+            const link = document.createElement("a")
+            link.download = "sol-values-results.png"
+            link.href = banner.src
+            link.click()
+        })
+    }
+
+    createShareableImage()
 </script>
 </body>
 </html>

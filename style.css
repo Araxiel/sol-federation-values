@@ -10,11 +10,11 @@
     --primary-hover: #326b9e;
     --axis-federalism: #2f3ad3;
     --axis-autonomism: #07ee41;
-    --axis-commonwealth: #ffd000;
+    --axis-commonwealth: #d8c200;
     --axis-corporatism: #00eeff;
     --axis-militarism: #ff1e00;
     --axis-defencism: #00f30c;
-    --axis-synthesism: #e4d977;
+    --axis-synthesism: #5f5d48;
     --axis-capitalism: #97035a;
     --axis-feudalism: #db0d40;
     --axis-universalism: #3628f5;
@@ -51,7 +51,7 @@ p.value {
     text-indent: -16pt;
     margin-left: 20pt;
     font-size: 24pt;
-    line-height: 2.11666656px;
+    line-height: 1.1;
     letter-spacing: 0.03em;
     font-family: 'Montserrat';
 }
@@ -324,6 +324,20 @@ span.weight-300 {
 .result-axis {
     margin: 0 0 24pt;
 }
+.result-axis-layout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.result-axis-body {
+    flex: 1;
+    min-width: 0;
+}
+.result-axis-icon {
+    width: 104px;
+    height: 104px;
+    flex: 0 0 104px;
+}
 .result-axis-heading {
     margin-bottom: 6pt;
     font-size: 25pt;
@@ -353,6 +367,28 @@ span.weight-300 {
 .result-bar-segment {
     min-width: 0;
     transition: width .35s ease;
+}
+.result-export {
+    max-width: 850px;
+    margin: 30pt auto 20pt;
+    text-align: center;
+}
+.result-export h2 {
+    margin-bottom: 10pt;
+}
+.result-export #banner {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin-bottom: 12pt;
+}
+.result-export .button {
+    min-width: 0;
+    width: 100%;
+}
+.button:disabled {
+    cursor: wait;
+    opacity: .6;
 }
 .closest-match {
     max-width: 850px;
@@ -398,15 +434,47 @@ span.weight-300 {
     text-align: center;
 }
 @media (max-width: 700px) {
-    body.results-page {
+    body {
         box-sizing: border-box;
         width: 100%;
         padding: 1em;
         border-width: 0;
     }
-    .results-page h1 {
+    h1 {
         font-size: 48pt;
         line-height: 52pt;
+    }
+    h2 {
+        font-size: 26pt;
+        line-height: 30pt;
+    }
+    div.center,
+    p.question,
+    .button {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+    }
+    div.axis_name.valuecolumn {
+        font-size: 11pt;
+    }
+    p.question {
+        font-size: 25pt;
+    }
+    .spacer {
+        display: block;
+    }
+    div.explanation_blurb_left,
+    div.explanation_blurb_right,
+    div.explanation_axis {
+        box-sizing: border-box;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 12pt;
+    }
+    p.axis_name {
+        margin-top: 20px;
     }
     .result-axis-heading {
         font-size: 20pt;
@@ -414,6 +482,17 @@ span.weight-300 {
     }
     .result-value-labels {
         font-size: 11pt;
+    }
+    .result-axis-layout {
+        gap: 6px;
+    }
+    .result-axis-icon {
+        width: 58px;
+        height: 58px;
+        flex-basis: 58px;
+    }
+    .result-bar {
+        height: 38px;
     }
     .results-actions {
         flex-direction: column;
