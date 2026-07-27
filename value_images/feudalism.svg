@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+  <title id="title">Feudalism</title>
+  <rect width="200" height="200" rx="15" fill="#222"/>
+  <rect x="10" y="10" width="180" height="180" rx="10" fill="#db0d40"/>
+  <path d="M45 52l28 27 27-44 27 44 28-27-12 78H57L45 52zm15 88h80v12H60z" fill="#222"/>
+  <rect x="10" y="140" width="180" height="50" fill="#222"/>
+  <text x="100" y="172" fill="#eee" font-family="Montserrat, sans-serif" font-size="18" font-weight="700" text-anchor="middle">FEUDALISM</text>
+</svg>

@@ -95,15 +95,15 @@ div.center {
     font-size: 24pt;
     margin: auto;
 }
-img.quadcolumn {
-    width: 23.75%;
+img.valuecolumn {
+    width: 18.75%;
     transition: transform .3s;
 }
-img.quadcolumn:hover {
+img.valuecolumn:hover {
     transform: scale(1.05);
   }
-div.quadcolumn {
-    width: 23.75%;
+div.valuecolumn {
+    width: 18.75%;
 }
 div.axis_name {
     color: #333333;
