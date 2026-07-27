@@ -24,19 +24,21 @@
 
 <!-- JavaScript for the test itself -->
 <script>
-    var max_econ, max_dipl, max_govt, max_scty; // Max possible scores
-    max_econ = max_dipl = max_govt = max_scty = 0;
+    var max_econ, max_dipl, max_govt, max_ordr, max_synd; // Max possible scores
+    max_econ = max_dipl = max_govt = max_ordr = max_synd = 0;
     let econ_array = new Array(questions.length);
     let dipl_array = new Array(questions.length);
     let govt_array = new Array(questions.length);
-    let scty_array = new Array(questions.length);
+    let synd_array = new Array(questions.length);
+    let ordr_array = new Array(questions.length);
     var qn = 0; // Question number
     init_question();
     for (var i = 0; i < questions.length; i++) {
         max_econ += Math.abs(questions[i].effect.econ)
         max_dipl += Math.abs(questions[i].effect.dipl)
         max_govt += Math.abs(questions[i].effect.govt)
-        max_scty += Math.abs(questions[i].effect.scty)
+        max_synd += Math.abs(questions[i].effect.synd)
+        max_ordr += Math.abs(questions[i].effect.ordr)
     }
     function init_question() {
         document.getElementById("question-text").innerHTML = questions[qn].question;
@@ -55,7 +57,8 @@
         econ_array[qn] = mult*questions[qn].effect.econ
         dipl_array[qn] = mult*questions[qn].effect.dipl
         govt_array[qn] = mult*questions[qn].effect.govt
-        scty_array[qn] = mult*questions[qn].effect.scty
+        synd_array[qn] = mult*questions[qn].effect.synd
+        ordr_array[qn] = mult*questions[qn].effect.ordr
         qn++;
         if (qn < questions.length) {
             init_question();
@@ -80,12 +83,14 @@
         let final_econ = econ_array.reduce((a, b) => a + b, 0)
         let final_dipl = dipl_array.reduce((a, b) => a + b, 0)
         let final_govt = govt_array.reduce((a, b) => a + b, 0)
-        let final_scty = scty_array.reduce((a, b) => a + b, 0)
+        let final_synd = synd_array.reduce((a, b) => a + b, 0)
+        let final_ordr = ordr_array.reduce((a, b) => a + b, 0)
         location.href = `results.html`
             + `?e=${calc_score(final_econ,max_econ)}`
             + `&d=${calc_score(final_dipl,max_dipl)}`
             + `&g=${calc_score(final_govt,max_govt)}`
-            + `&s=${calc_score(final_scty,max_scty)}`
+            + `&y=${calc_score(final_synd,max_synd)}`
+            + `&o=${calc_score(final_ordr,max_ordr)}`
     }
 </script>
 </body>

@@ -1,3 +1,5 @@
+// TODO #186 The entire file
+
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
@@ -77,7 +79,8 @@
     econArray = ["Communist","Socialist","Social","Centrist","Market","Capitalist","Laissez-Faire"]
     diplArray = ["Cosmopolitan","Internationalist","Peaceful","Balanced","Patriotic","Nationalist","Chauvinist"]
     govtArray = ["Anarchist","Libertarian","Liberal","Moderate","Statist","Authoritarian","Totalitarian"]
-    sctyArray = ["Revolutionary","Very Progressive","Progressive","Neutral","Traditional","Very Traditional","Reactionary"]
+    ordrArray = ["Revolutionary","Very Progressive","Progressive","Neutral","Traditional","Very Traditional","Reactionary"]
+    syndArray = ["Revolutionary", "Very Progressive", "Progressive", "Neutral", "Traditional", "Very Traditional", "Reactionary"]
 
     function setLabel(val,ary) {
         if (val > 100) { return "" } else
@@ -112,7 +115,8 @@
     document.getElementById("economic-label").innerHTML = setLabel(equality, econArray)
     document.getElementById("diplomatic-label").innerHTML = setLabel(peace, diplArray)
     document.getElementById("state-label").innerHTML = setLabel(liberty, govtArray)
-    document.getElementById("society-label").innerHTML = setLabel(progress, sctyArray)
+    document.getElementById("society-label").innerHTML = setLabel(progress, ordrArray)
+    document.getElementById("society-label").innerHTML = setLabel(synthesism, syndArray)
 
     ideology = ""
     ideodist = Infinity
@@ -121,7 +125,8 @@
         dist += Math.pow(Math.abs(ideologies[i].stats.econ - equality), 2)
         dist += Math.pow(Math.abs(ideologies[i].stats.govt - liberty), 2)
         dist += Math.pow(Math.abs(ideologies[i].stats.dipl - peace), 1.73856063)
-        dist += Math.pow(Math.abs(ideologies[i].stats.scty - progress), 1.73856063)
+        dist += Math.pow(Math.abs(ideologies[i].stats.ordr - progress), 1.73856063)
+        dist += Math.pow(Math.abs(ideologies[i].stats.synd - synthesism), 1.73856063)
         if (dist < ideodist) {
             ideology = ideologies[i].name
             ideodist = dist
@@ -201,6 +206,7 @@
         if (authority > 30) {ctx.fillText(authority + "%", 670, 477.5)}
         if (progress  > 30) {ctx.fillText(progress + "%", 670, 597.5)}
 
+        // TODO
         ctx.font="300 30px Montserrat"
         ctx.fillText("8values.github.io", 780, 60)
 		ctx.fillText(version, 780, 90)
