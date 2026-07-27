@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title"><title id="title">Synthesism</title><rect width="200" height="200" rx="15" fill="#222"/><rect x="10" y="10" width="180" height="180" rx="10" fill="#5f5d48"/><g fill="#eee" stroke="#222" stroke-width="8"><circle cx="100" cy="82" r="25"/><circle cx="55" cy="112" r="20"/><circle cx="145" cy="112" r="20"/></g><path d="M72 99l13-9m30 0l13 9M75 119h50" fill="none" stroke="#222" stroke-width="8"/><rect x="10" y="140" width="180" height="50" fill="#222"/><text x="100" y="172" fill="#eee" font-family="Montserrat,sans-serif" font-size="16" font-weight="700" text-anchor="middle">SYNTHESISM</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+  <title id="title">Synthesism</title>
+  <rect width="200" height="200" rx="15" fill="#222"/>
+  <rect x="10" y="10" width="180" height="180" rx="10" fill="#292121"/>
+  <path d="M100 25l14 36 39 2-30 25 10 38-33-21-33 21 10-38-30-25 39-2 14-36z" fill="#fff"/>
+  <rect x="10" y="140" width="180" height="50" fill="#222"/>
+  <text x="100" y="172" fill="#eee" font-family="Montserrat,sans-serif" font-size="16" font-weight="700" text-anchor="middle">SYNTHESISM</text>
+</svg>

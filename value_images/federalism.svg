@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title"><title id="title">Federalism</title><rect width="200" height="200" rx="15" fill="#222"/><rect x="10" y="10" width="180" height="180" rx="10" fill="#2f3ad3"/><g stroke="#222" stroke-width="8"><path d="M55 55l45 35 45-35M100 90v40"/><circle cx="55" cy="55" r="17" fill="#eee"/><circle cx="145" cy="55" r="17" fill="#eee"/><circle cx="100" cy="100" r="20" fill="#eee"/></g><rect x="10" y="140" width="180" height="50" fill="#222"/><text x="100" y="172" fill="#eee" font-family="Montserrat,sans-serif" font-size="17" font-weight="700" text-anchor="middle">FEDERALISM</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+  <title id="title">Federalism</title>
+  <rect width="200" height="200" rx="15" fill="#222"/>
+  <rect x="10" y="10" width="180" height="180" rx="10" fill="#2f3ad3"/>
+  <g fill="none" stroke="#eee" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="100" cy="73" r="39" stroke-width="6"/>
+    <path d="M61 73h78M100 34c-15 12-22 25-22 39s7 27 22 39c15-12 22-25 22-39s-7-27-22-39z" stroke-width="5"/>
+    <path d="M48 121C25 103 25 65 47 38M152 121c23-18 23-56 1-83" stroke-width="6"/>
+    <path d="M43 105l-12-4m15-10l-14-9m15-7l-13-13m23 54l-9 12M157 105l12-4m-15-10l14-9m-15-7l13-13m-23 54l9 12" stroke-width="5"/>
+  </g>
+  <rect x="10" y="140" width="180" height="50" fill="#222"/>
+  <text x="100" y="172" fill="#eee" font-family="Montserrat,sans-serif" font-size="17" font-weight="700" text-anchor="middle">FEDERALISM</text>
+</svg>
