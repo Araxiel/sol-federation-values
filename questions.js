@@ -280,6 +280,16 @@ questions = [
         }
     },
     {
+        "question": "From each according to his ability, to each according to his needs.",
+        "effect": {
+            "govt": 0,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 20,
+            "ordr": 0
+        }
+    },
+    {
         "question": "Workers should collectively control the enterprises, stations, and vessels in which they work.",
         "effect": {
             "govt": 0,
