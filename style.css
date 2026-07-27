@@ -1,5 +1,26 @@
+:root {
+    --page-bg: #0f1720;
+    --surface-bg: #1b2734;
+    --surface-border: #3b4b5f;
+    --panel-bg: #e3e9ef;
+    --panel-text: #334155;
+    --body-text: #c9d3de;
+    --heading-text: #f2f5f8;
+    --primary: #3f7fba;
+    --primary-hover: #326b9e;
+    --axis-federalism: #2f3ad3;
+    --axis-autonomism: #07ee41;
+    --axis-commonwealth: #ffd000;
+    --axis-corporatism: #00eeff;
+    --axis-militarism: #ff1e00;
+    --axis-defencism: #00f30c;
+    --axis-synthesism: #e4d977;
+    --axis-capitalism: #97035a;
+    --axis-feudalism: #db0d40;
+    --axis-universalism: #3628f5;
+}
 html {
-    background-color: #a5a6f5;
+    background-color: var(--page-bg);
     padding: 0px;
     scroll-behavior: smooth;
 }
@@ -8,14 +29,16 @@ body {
     min-height: calc(100vh - 4em);
     margin: 0 auto;
     padding: 2em;
-    background-color: #a5a6f5;
-    border-color: #eeeeee;
+    background-color: var(--surface-bg);
+    border-color: var(--surface-border);
     border-left-style: solid;
     border-right-style: solid;
     border-width: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .28);
+    color: var(--body-text);
 }
 p {
-    color: #444444;
+    color: var(--body-text);
     font-family: 'Roboto', sans-serif;
     font-size: 18.5pt;
     line-height: 1.15;
@@ -32,22 +55,32 @@ p.value {
     letter-spacing: 0.03em;
     font-family: 'Montserrat';
 }
+.axis-federalism { color: var(--axis-federalism); }
+.axis-autonomism { color: var(--axis-autonomism); }
+.axis-commonwealth { color: var(--axis-commonwealth); }
+.axis-corporatism { color: var(--axis-corporatism); }
+.axis-militarism { color: var(--axis-militarism); }
+.axis-defencism { color: var(--axis-defencism); }
+.axis-synthesism { color: var(--axis-synthesism); }
+.axis-capitalism { color: var(--axis-capitalism); }
+.axis-feudalism { color: var(--axis-feudalism); }
+.axis-universalism { color: var(--axis-universalism); }
 
 p.axis_name {
     margin-top: 50px;
-    color: #333333;
+    color: var(--panel-text);
     font-size: 19pt;
     font-family: 'Montserrat';
 }
 p.question {
     margin: 16pt auto;
-    color: #333333;
+    color: var(--panel-text);
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     width: 70%;
     min-width: 500pt;
     min-height: 144pt;
-    background-color: #eeeeee;
+    background-color: var(--panel-bg);
     padding: 16pt;
     border-radius: 16pt;
     font-size: 36pt;
@@ -58,7 +91,7 @@ p.question {
 
 }
 h1 {
-    color: #222222;
+    color: var(--heading-text);
     font-family: 'Montserrat', sans-serif;
     font-size: 72pt;
     text-align: center;
@@ -67,7 +100,7 @@ h1 {
     margin-bottom: 0pt;
 }
 h2 {
-    color: #333333;
+    color: var(--heading-text);
     font-family: 'Montserrat', sans-serif;
     font-size: 34pt;
     line-height: 36pt;
@@ -79,10 +112,18 @@ li {
     text-indent: 16pt;
 }
 a {
+    color: #86b7df;
     font-family: inherit;
 }
+a:visited {
+    color: #a9a1d6;
+}
+hr {
+    border: 0;
+    border-top: 2px solid var(--surface-border);
+}
 div.center {
-    background-color: #eeeeee;
+    background-color: var(--panel-bg);
     font-family: 'Montserrat', sans-serif;
     border-radius: 8pt;
     padding: 6pt;
@@ -106,7 +147,7 @@ div.valuecolumn {
     width: 18.75%;
 }
 div.axis_name {
-    color: #333333;
+    color: var(--panel-text);
     font-size: 19pt;
     font-family: 'Montserrat';
     display: inline-block;
@@ -122,7 +163,7 @@ div.axis_name {
     text-align: center;
 }
 .button {
-    background-color: #2196f3;
+    background-color: var(--primary);
     font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 8pt;
@@ -137,7 +178,7 @@ div.axis_name {
     margin: -2px auto;
     cursor: pointer;
 }
-.button:hover, .button:focus { background: #1687e0; }
+.button:hover, .button:focus { background: var(--primary-hover); }
 .stronglyAgree { background: #1b5e20; }
 .stronglyAgree:hover, .stronglyAgree:focus { background: #154a19; }
 .agree { background: #4caf50; }
@@ -150,7 +191,7 @@ div.axis_name {
 .stronglyDisagree:hover, .stronglyDisagree:focus { background: #a00e0e; }
 
 .small_button, .small_button_off {
-    background-color: #333;
+    background-color: #344457;
     font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 8pt;
@@ -167,7 +208,7 @@ div.axis_name {
 }
 
 .small_button:hover, .small_button:focus {
-    background: #222;
+    background: #293746;
 }
 
 .small_button_off {
@@ -213,8 +254,8 @@ div.bar {
     border-right-width: 1px;
     border-top-style: solid;
     border-bottom-style: solid;
-    border-color: #222222;
-    background-color: #eeeeee;
+    border-color: var(--page-bg);
+    background-color: var(--panel-bg);
     display: block;
     width: 50%;
 }
@@ -293,7 +334,7 @@ span.weight-300 {
     justify-content: space-between;
     gap: 16px;
     margin-bottom: 5pt;
-    color: #333333;
+    color: var(--body-text);
     font-family: 'Montserrat', sans-serif;
     font-size: 15pt;
     font-weight: 700;
@@ -305,9 +346,9 @@ span.weight-300 {
     display: flex;
     height: 52px;
     overflow: hidden;
-    border: 4px solid #222222;
+    border: 4px solid var(--page-bg);
     border-radius: 8px;
-    background: #eeeeee;
+    background: var(--panel-bg);
 }
 .result-bar-segment {
     min-width: 0;
@@ -318,19 +359,21 @@ span.weight-300 {
     margin: 30pt auto 20pt;
     padding: 16pt;
     border-radius: 12pt;
-    background: #eeeeee;
+    background: var(--panel-bg);
 }
 .closest-match h2 {
     margin-top: 0;
+    color: var(--panel-text);
 }
 #ideology-label {
-    color: #222222;
+    color: #1f2937;
     font-family: 'Montserrat', sans-serif;
     font-size: 28pt;
     font-weight: 700;
 }
 .results-note {
     font-size: 14pt;
+    color: #526274;
 }
 .results-actions {
     display: flex;
@@ -344,11 +387,11 @@ span.weight-300 {
     margin: 0;
 }
 .secondary-button {
-    background-color: #555555;
+    background-color: #536477;
 }
 .secondary-button:hover,
 .secondary-button:focus {
-    background-color: #3f3f3f;
+    background-color: #435365;
 }
 .results-error {
     color: #b71c1c;
@@ -380,12 +423,15 @@ span.weight-300 {
     }
 }
 .explanation_bg {
-    background-color: #eeeeee;
+    background-color: var(--panel-bg);
     border-radius: 25px;
     margin-top: 15px;
 }
+.explanation_bg p {
+    color: var(--panel-text);
+}
 #banner {
-    border-color: #444444;
+    border-color: var(--surface-border);
     border-style: solid;
     border-width: 2px;
     border-radius: 8pt;
