@@ -484,6 +484,17 @@ questions = [
         }
     },
     {
+        "id": "61",
+        "question": "Describing the Federation's expansion as the end of a \"Warlord Era\" obscures the fact that many incorporated systems were already stable republics rather than territories awaiting liberation.",
+        "effect": {
+            "govt": -10,
+            "econ": 0,
+            "dipl": -5,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
         "id": "41",
         "question": "The Federation needs an independent power to raise taxes directly, rather than relying on contributions negotiated with member worlds.",
         "effect": {
@@ -671,3 +682,4 @@ questions = [
         }
     }
 ];
+//Last ID: 61
