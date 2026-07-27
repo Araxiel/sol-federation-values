@@ -15,12 +15,15 @@
 <h1>Sol Values</h1>
 <hr>
 <h2 style="text-align:center;" id="question-number">Loading...</h2>
-<p class="question" id="question-text"></p>
-<button class="button stronglyAgree" onclick="next_question( 1.0)">Strongly Agree</button> <br>
-<button class="button agree" onclick="next_question( 0.5)">Agree</button> <br>
-<button class="button neutral" onclick="next_question( 0.0)">Neutral/Unsure</button> <br>
-<button class="button disagree" onclick="next_question(-0.5)">Disagree</button> <br>
-<button class="button stronglyDisagree" onclick="next_question(-1.0)">Strongly Disagree</button> <br>
+<p class="question">
+    <span class="question-id" id="question-id"></span>
+    <span id="question-text"></span>
+</p>
+<button class="button stronglyAgree" data-answer-button>Strongly Agree</button> <br>
+<button class="button agree" data-answer-button>Agree</button> <br>
+<button class="button neutral" data-answer-button>Neutral/Unsure</button> <br>
+<button class="button disagree" data-answer-button>Disagree</button> <br>
+<button class="button stronglyDisagree" data-answer-button>Strongly Disagree</button> <br>
 <button class="small_button" onclick="prev_question()" id="back_button">Back</button>
 <button class="small_button_off" id="back_button_off" disabled>Back</button><br>
 
@@ -33,6 +36,32 @@
     let govt_array = new Array(questions.length);
     let synd_array = new Array(questions.length);
     let ordr_array = new Array(questions.length);
+    const answerButtons = Array.from(document.querySelectorAll("[data-answer-button]"));
+    const standardAnswers = [
+        { label: "Strongly Agree", multiplier: 1.0, style: "stronglyAgree" },
+        { label: "Agree", multiplier: 0.5, style: "agree" },
+        { label: "Neutral/Unsure", multiplier: 0.0, style: "neutral" },
+        { label: "Disagree", multiplier: -0.5, style: "disagree" },
+        { label: "Strongly Disagree", multiplier: -1.0, style: "stronglyDisagree" }
+    ];
+    const enforcedAnswerPositive = [
+        { label: "Strongly Agree", multiplier: 1.0, style: "stronglyAgree" },
+        { label: "Strongly Agree", multiplier: 1.0, style: "stronglyAgree" },
+        { label: "Agree", multiplier: 0.5, style: "agree" },
+        { label: "Agree", multiplier: 0.5, style: "agree" },
+        { label: "Unsure", multiplier: 0.0, style: "neutral" }
+    ];
+    const answerOverrides = {
+        "20": [
+            { label: "Strongly Agree", multiplier: 1.0, style: "stronglyAgree" },
+            { label: "Strongly Agree", multiplier: 1.0, style: "stronglyAgree" },
+            { label: "Strongly Agree", multiplier: 1.0, style: "stronglyAgree" },
+            { label: "Strongly Agree", multiplier: 1.0, style: "stronglyAgree" },
+            { label: "Agree", multiplier: 0.5, style: "agree" }
+        ],
+        "57": enforcedAnswerPositive,
+        "58": enforcedAnswerPositive
+    };
     var qn = 0; // Question number
     init_question();
     for (var i = 0; i < questions.length; i++) {
@@ -44,7 +73,15 @@
     }
     function init_question() {
         document.getElementById("question-text").textContent = questions[qn].question;
+        document.getElementById("question-id").textContent = "#" + questions[qn].id;
         document.getElementById("question-number").textContent = "Question " + (qn + 1) + " of " + (questions.length);
+        const answers = answerOverrides[String(questions[qn].id)] || standardAnswers;
+        answerButtons.forEach((button, index) => {
+            const answer = answers[index];
+            button.textContent = answer.label;
+            button.className = "button " + answer.style;
+            button.onclick = () => next_question(answer.multiplier);
+        });
         if (qn == 0) {
             document.getElementById("back_button").style.display = 'none';
             document.getElementById("back_button_off").style.display = 'block';

@@ -204,7 +204,7 @@ questions = [
             "govt": -10,
             "econ": 0,
             "dipl": 0,
-            "synd": 0,
+            "synd": 1,
             "ordr": 0
         }
     },
@@ -407,6 +407,17 @@ questions = [
         }
     },
     {
+        "id": "57",
+        "question": "A citizen's gender or sexuality, whether determined at birth or chosen later, is a meaningless basis for legal or social distinction.",
+        "effect": {
+            "econ": 0,
+            "dipl": 0,
+            "govt": 0,
+            "synd": 0,
+            "ordr": 10
+        }
+    },
+    {
         "id": "38",
         "question": "If a private company can provide a service profitably, the Federation usually has no reason to provide it itself.",
         "effect": {
@@ -430,7 +441,7 @@ questions = [
     },
     {
         "id": "40",
-        "question": "A federally owned corporation directed by appointed administrators is little better than a private corporation directed by shareholders.",
+        "question": "A federally owned corporation directed by appointed administrators is not meaningfully better than a private corporation directed by shareholders.",
         "effect": {
             "govt": -5,
             "econ": 0,
@@ -481,6 +492,17 @@ questions = [
             "dipl": 10,
             "synd": 0,
             "ordr": 0
+        }
+    },
+    {
+        "id": "58",
+        "question": "Until the Juvan Dominion returns all unlawfully occupied Federation territory, there can be no lasting peace settlement.",
+        "effect": {
+            "econ": 0,
+            "dipl": 10,
+            "govt": 5,
+            "synd": 0,
+            "ordr": -5
         }
     },
     {
