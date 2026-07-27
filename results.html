@@ -6,7 +6,7 @@
     <title>Sol Values Results</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
 </head>
 <body class="results-page">
 <main>
@@ -20,7 +20,7 @@
     <section class="closest-match" aria-labelledby="closest-match-heading">
         <h2 id="closest-match-heading">Closest Match</h2>
         <p id="ideology-label">Calculating…</p>
-        <p class="results-note">Ideological matching is an experimental, placeholder feature.</p>
+        <p class="results-note" id="ideology-description">Loading description…</p>
     </section>
 
     <section class="result-export" aria-labelledby="result-export-heading">
@@ -188,7 +188,10 @@
 
     function findClosestIdeology() {
         if (!Array.isArray(ideologies) || ideologies.length === 0) {
-            return "No placeholder match available"
+            return {
+                name: "No match available",
+                description: "No ideology profiles are currently available for comparison."
+            }
         }
 
         let closest = ideologies[0]
@@ -207,11 +210,13 @@
             }
         }
 
-        return closest.name
+        return closest
     }
 
     const closestIdeology = findClosestIdeology()
-    document.getElementById("ideology-label").textContent = closestIdeology
+    document.getElementById("ideology-label").textContent = closestIdeology.name
+    document.getElementById("ideology-description").textContent = closestIdeology.description
+        || "No description is currently available for this ideology."
 
     function loadImage(src) {
         return new Promise(resolve => {
@@ -241,7 +246,7 @@
         context.textAlign = "left"
         context.fillText("Sol Values", 35, 58)
         context.font = "300 25px Montserrat, sans-serif"
-        context.fillText("Closest Match: " + closestIdeology, 35, 96)
+        context.fillText("Closest Match: " + closestIdeology.name, 35, 96)
 
         const iconPairs = await Promise.all(axes.map(async axis => [
             await loadImage(axis.leftIcon),
