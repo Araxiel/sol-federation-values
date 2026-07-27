@@ -33,6 +33,17 @@ questions = [
         }
     },
     {
+        "id": "59",
+        "question": "In the 33rd century, humanity should not still be governing hundreds of star systems through institutions designed for the needs of a single world.",
+        "effect": {
+            "govt": 10,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
         "id": "04",
         "question": "Essential interstellar infrastructure should remain publicly accountable, even when private corporations could operate it more efficiently.",
         "effect": {
@@ -66,6 +77,17 @@ questions = [
         }
     },
     {
+        "id": "60",
+        "question": "Because even a routine jump removes a ship from ordinary contact for 5.5 days, distant systems must be trusted to make more of their own decisions.",
+        "effect": {
+            "govt": -10,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
         "id": "07",
         "question": "There is intrinsic value in space exploration, even when it offers no immediate military or economic benefit.",
         "effect": {
@@ -85,6 +107,17 @@ questions = [
             "dipl": 0,
             "synd": 0,
             "ordr": 10
+        }
+    },
+    {
+        "id": "61",
+        "question": "A courier carrying an urgent military warning should receive priority over civilian traffic, even when nobody can confirm the message until the courier arrives.",
+        "effect": {
+            "govt": 0,
+            "econ": -5,
+            "dipl": 5,
+            "synd": 0,
+            "ordr": 0
         }
     },
     {
@@ -408,7 +441,7 @@ questions = [
     },
     {
         "id": "57",
-        "question": "A citizen's gender or sexuality, whether determined at birth or chosen later, is a meaningless basis for legal or social distinction.",
+        "question": "A citizen's sexuality or gender, whether determined at birth or chosen later, is a meaningless basis for legal or social distinction.",
         "effect": {
             "econ": 0,
             "dipl": 0,
