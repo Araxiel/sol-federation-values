@@ -21,6 +21,7 @@
         <h2 id="closest-match-heading">Closest Match</h2>
         <p id="ideology-label">Calculating…</p>
         <p class="results-note" id="ideology-description">Loading description…</p>
+        <p class="factions-link"><a id="all-factions-link" href="factions.html">See all Factions</a></p>
     </section>
 
     <section class="result-export" aria-labelledby="result-export-heading">
@@ -36,6 +37,7 @@
     <noscript><p class="results-error">JavaScript is required to display your results.</p></noscript>
 </main>
 
+<script src="values.js"></script>
 <script src="ideologies.js"></script>
 <script>
     const params = new URLSearchParams(window.location.search)
@@ -56,8 +58,8 @@
     const axes = [
         {
             name: "Governance",
-            left: "Federalism",
-            right: "Autonomism",
+            left: valueDefinitions.federalism,
+            right: valueDefinitions.autonomism,
             leftScore: scores.govt,
             leftColor: "--axis-federalism",
             rightColor: "--axis-autonomism",
@@ -66,8 +68,8 @@
         },
         {
             name: "Political Economy",
-            left: "Commonwealth",
-            right: "Corporatism",
+            left: valueDefinitions.commonwealth,
+            right: valueDefinitions.corporatism,
             leftScore: scores.econ,
             leftColor: "--axis-commonwealth",
             rightColor: "--axis-corporatism",
@@ -76,8 +78,8 @@
         },
         {
             name: "Security",
-            left: "Militarism",
-            right: "Defencism",
+            left: valueDefinitions.militarism,
+            right: valueDefinitions.defencism,
             leftScore: scores.dipl,
             leftColor: "--axis-militarism",
             rightColor: "--axis-defencism",
@@ -86,8 +88,8 @@
         },
         {
             name: "Ownership",
-            left: "Synthesism",
-            right: "Capitalism",
+            left: valueDefinitions.synthesism,
+            right: valueDefinitions.capitalism,
             leftScore: scores.synd,
             leftColor: "--axis-synthesism",
             rightColor: "--axis-capitalism",
@@ -96,8 +98,8 @@
         },
         {
             name: "Civic Order",
-            left: "Feudalism",
-            right: "Universalism",
+            left: valueDefinitions.feudalism,
+            right: valueDefinitions.universalism,
             leftScore: 100 - scores.ordr,
             leftColor: "--axis-feudalism",
             rightColor: "--axis-universalism",
@@ -115,9 +117,9 @@
         if (difference < 5) return "Balanced"
 
         const leadingValue = axis.leftScore > 50 ? axis.left : axis.right
-        if (difference >= 35) return "Strongly " + leadingValue
-        if (difference >= 20) return leadingValue
-        return "Leaning " + leadingValue
+        if (difference >= 35) return "Strongly " + leadingValue.name
+        if (difference >= 20) return leadingValue.name
+        return "Leaning " + leadingValue.name
     }
 
     function renderAxis(axis) {
@@ -132,10 +134,18 @@
         const layout = document.createElement("div")
         layout.className = "result-axis-layout"
 
+        const leftEndpoint = document.createElement("div")
+        leftEndpoint.className = "result-endpoint"
+
         const leftIcon = document.createElement("img")
         leftIcon.className = "result-axis-icon"
         leftIcon.src = axis.leftIcon
-        leftIcon.alt = axis.left
+        leftIcon.alt = axis.left.name
+
+        const leftReminder = document.createElement("p")
+        leftReminder.className = "result-value-reminder"
+        leftReminder.textContent = axis.left.name + " means " + axis.left.shortDescription + "."
+        leftEndpoint.append(leftIcon, leftReminder)
 
         const axisBody = document.createElement("div")
         axisBody.className = "result-axis-body"
@@ -144,10 +154,10 @@
         labels.className = "result-value-labels"
 
         const leftLabel = document.createElement("span")
-        leftLabel.textContent = axis.left + " " + formatScore(axis.leftScore)
+        leftLabel.textContent = axis.left.name + " " + formatScore(axis.leftScore)
 
         const rightLabel = document.createElement("span")
-        rightLabel.textContent = formatScore(rightScore) + " " + axis.right
+        rightLabel.textContent = formatScore(rightScore) + " " + axis.right.name
 
         labels.append(leftLabel, rightLabel)
 
@@ -156,8 +166,8 @@
         bar.setAttribute("role", "img")
         bar.setAttribute(
             "aria-label",
-            axis.name + ": " + formatScore(axis.leftScore) + " " + axis.left
-                + ", " + formatScore(rightScore) + " " + axis.right
+            axis.name + ": " + formatScore(axis.leftScore) + " " + axis.left.name
+                + ", " + formatScore(rightScore) + " " + axis.right.name
         )
 
         const leftBar = document.createElement("div")
@@ -173,12 +183,20 @@
         bar.append(leftBar, rightBar)
         axisBody.append(labels, bar)
 
+        const rightEndpoint = document.createElement("div")
+        rightEndpoint.className = "result-endpoint"
+
         const rightIcon = document.createElement("img")
         rightIcon.className = "result-axis-icon"
         rightIcon.src = axis.rightIcon
-        rightIcon.alt = axis.right
+        rightIcon.alt = axis.right.name
 
-        layout.append(leftIcon, axisBody, rightIcon)
+        const rightReminder = document.createElement("p")
+        rightReminder.className = "result-value-reminder"
+        rightReminder.textContent = axis.right.name + " means " + axis.right.shortDescription + "."
+        rightEndpoint.append(rightIcon, rightReminder)
+
+        layout.append(leftEndpoint, axisBody, rightEndpoint)
         section.append(heading, layout)
         return section
     }
@@ -217,6 +235,7 @@
     document.getElementById("ideology-label").textContent = closestIdeology.name
     document.getElementById("ideology-description").textContent = closestIdeology.description
         || "No description is currently available for this ideology."
+    document.getElementById("all-factions-link").href = "factions.html" + window.location.search
 
     function loadImage(src) {
         return new Promise(resolve => {
@@ -268,9 +287,9 @@
 
             context.font = "700 16px Montserrat, sans-serif"
             context.textAlign = "left"
-            context.fillText(axis.left + " " + formatScore(axis.leftScore), barX, top + 48)
+            context.fillText(axis.left.name + " " + formatScore(axis.leftScore), barX, top + 48)
             context.textAlign = "right"
-            context.fillText(formatScore(rightScore) + " " + axis.right, barX + barWidth, top + 48)
+            context.fillText(formatScore(rightScore) + " " + axis.right.name, barX + barWidth, top + 48)
 
             context.fillStyle = cssColor(axis.leftColor)
             context.fillRect(barX, barY, barWidth * axis.leftScore / 100, barHeight)

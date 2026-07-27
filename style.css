@@ -333,10 +333,20 @@ span.weight-300 {
     flex: 1;
     min-width: 0;
 }
+.result-endpoint {
+    width: 150px;
+    flex: 0 0 150px;
+    text-align: center;
+}
 .result-axis-icon {
     width: 104px;
     height: 104px;
-    flex: 0 0 104px;
+}
+.result-value-reminder {
+    margin: 6pt 0 0;
+    color: var(--body-text);
+    font-size: 10.5pt;
+    line-height: 1.2;
 }
 .result-axis-heading {
     margin-bottom: 6pt;
@@ -433,6 +443,70 @@ span.weight-300 {
     color: #b71c1c;
     text-align: center;
 }
+.factions-link {
+    margin: 20pt auto;
+    text-align: center;
+}
+.factions-link a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18pt;
+    font-weight: 700;
+}
+.factions-title,
+.factions-intro {
+    text-align: center;
+}
+.factions-intro {
+    max-width: 850px;
+    margin: 0 auto 24pt;
+}
+.faction-list {
+    display: grid;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 16pt;
+}
+.faction-card {
+    padding: 18pt;
+    border-radius: 12pt;
+    background: var(--panel-bg);
+}
+.faction-card h2 {
+    margin-top: 0;
+    color: var(--panel-text);
+    font-size: 25pt;
+    line-height: 29pt;
+}
+.faction-card p {
+    color: var(--panel-text);
+}
+.faction-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7pt;
+    margin-top: 14pt;
+}
+.faction-value {
+    padding: 5pt 8pt;
+    border-left: 6px solid var(--surface-border);
+    border-radius: 4pt;
+    background: #cbd5df;
+    color: #253242;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+}
+.faction-actions {
+    display: flex;
+    max-width: 900px;
+    margin: 24pt auto 0;
+    gap: 12pt;
+}
+.faction-actions .button {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+}
 @media (max-width: 700px) {
     body {
         box-sizing: border-box;
@@ -489,7 +563,13 @@ span.weight-300 {
     .result-axis-icon {
         width: 58px;
         height: 58px;
-        flex-basis: 58px;
+    }
+    .result-endpoint {
+        width: 78px;
+        flex-basis: 78px;
+    }
+    .result-value-reminder {
+        font-size: 8pt;
     }
     .result-bar {
         height: 38px;
@@ -499,6 +579,9 @@ span.weight-300 {
     }
     .results-actions .button {
         width: 100%;
+    }
+    .faction-actions {
+        flex-direction: column;
     }
 }
 .explanation_bg {

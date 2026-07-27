@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sol Values Factions</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+</head>
+<body class="factions-page">
+<main>
+    <h1>Sol Values</h1>
+    <hr>
+    <h2 class="factions-title">Factions &amp; Ideologies</h2>
+    <p class="factions-intro">A short guide to the political tendencies currently used for closest-match results.</p>
+
+    <div id="faction-list" class="faction-list"></div>
+
+    <div class="faction-actions">
+        <a class="button secondary-button" id="back-to-results" href="results.html" hidden>Back to Results</a>
+        <a class="button" href="index.html">Back to Main Menu</a>
+    </div>
+    <noscript><p class="results-error">JavaScript is required to display the faction list.</p></noscript>
+</main>
+
+<script src="ideologies.js"></script>
+<script>
+    const factionAxes = [
+        { key: "govt", positive: "FED", negative: "AUT", positiveColor: "--axis-federalism", negativeColor: "--axis-autonomism" },
+        { key: "econ", positive: "COM", negative: "COR", positiveColor: "--axis-commonwealth", negativeColor: "--axis-corporatism" },
+        { key: "dipl", positive: "MIL", negative: "DEF", positiveColor: "--axis-militarism", negativeColor: "--axis-defencism" },
+        { key: "synd", positive: "SYN", negative: "CAP", positiveColor: "--axis-synthesism", negativeColor: "--axis-capitalism" },
+        { key: "ordr", positive: "UNI", negative: "FEU", positiveColor: "--axis-universalism", negativeColor: "--axis-feudalism" }
+    ]
+
+    function createValueBadge(axis, stats) {
+        const score = Number.isFinite(stats[axis.key]) ? stats[axis.key] : 50
+        const badge = document.createElement("span")
+        badge.className = "faction-value"
+
+        if (score === 50) {
+            badge.textContent = "BAL 50"
+            badge.style.borderColor = "var(--surface-border)"
+            return badge
+        }
+
+        const positive = score > 50
+        badge.textContent = (positive ? axis.positive : axis.negative) + " "
+            + Math.max(score, 100 - score).toFixed(0)
+        badge.style.borderColor = `var(${positive ? axis.positiveColor : axis.negativeColor})`
+        return badge
+    }
+
+    const factionList = document.getElementById("faction-list")
+    ideologies.forEach(ideology => {
+        const article = document.createElement("article")
+        article.className = "faction-card"
+
+        const heading = document.createElement("h2")
+        heading.textContent = ideology.name
+
+        const description = document.createElement("p")
+        description.textContent = ideology.description
+            || "No description is currently available for this ideology."
+
+        const values = document.createElement("div")
+        values.className = "faction-values"
+        values.setAttribute("aria-label", "Value shorthand")
+        factionAxes.forEach(axis => values.appendChild(createValueBadge(axis, ideology.stats || {})))
+
+        article.append(heading, description, values)
+        factionList.appendChild(article)
+    })
+
+    const params = new URLSearchParams(window.location.search)
+    const resultKeys = ["e", "d", "g", "y", "o"]
+    if (resultKeys.every(key => params.has(key))) {
+        const backToResults = document.getElementById("back-to-results")
+        backToResults.href = "results.html?" + params.toString()
+        backToResults.hidden = false
+    }
+</script>
+</body>
+</html>
