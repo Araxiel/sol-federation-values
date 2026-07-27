@@ -20,7 +20,7 @@ questions = [
         }
     },
     {
-        "question": "The Federation should be able to impose common standards for education, healthcare, and public safety on every member world.",
+        "question": "The Federation should impose common standards for education, healthcare, and public safety on every member world.",
         "effect": {
             "govt": 10,
             "econ": 5,
@@ -30,7 +30,77 @@ questions = [
         }
     },
     {
-        "question": "A world should be free to leave the Sol Federation if a majority of its citizens vote to do so.",
+        "question": "A member world should be free to leave the Sol Federation if a majority of its citizens vote to do so.",
+        "effect": {
+            "govt": -10,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "When local governments fail, federal administrators should be able to assume temporary control without waiting for local consent.",
+        "effect": {
+            "govt": 10,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "During a frontier emergency, locally chosen officials should be able to disregard federal procedure and act on their own judgment.",
+        "effect": {
+            "govt": -10,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Policies designed for the core systems should not automatically apply to settlements facing entirely different conditions.",
+        "effect": {
+            "govt": -10,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Disputes between star systems require a federal court whose rulings cannot be rejected by either side.",
+        "effect": {
+            "govt": 10,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Worlds should be allowed to experiment with inefficient or unusual institutions rather than conform to a single federal model.",
+        "effect": {
+            "govt": -10,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "The Federation needs an independent power to raise taxes directly, rather than relying on contributions negotiated with member worlds.",
+        "effect": {
+            "govt": 10,
+            "econ": 5,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Communication delays alone justify granting remote colonies broad permanent exemptions from federal oversight.",
         "effect": {
             "govt": -10,
             "econ": 0,
@@ -62,7 +132,7 @@ questions = [
     {
         "question": "Prosperous core systems have a duty to subsidize struggling settlements on the frontier.",
         "effect": {
-            "govt": 0,
+            "govt": 5,
             "econ": 10,
             "dipl": 0,
             "synd": 0,
@@ -80,9 +150,59 @@ questions = [
         }
     },
     {
-        "question": "The Federation must be willing to strike beyond its borders before distant threats become immediate ones.",
+        "question": "During a supply crisis, authorities should control prices and distribution rather than allow goods to go to the highest bidder.",
         "effect": {
             "govt": 0,
+            "econ": 10,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "A company town is a legitimate arrangement when residents freely signed the employment and housing contracts that created it.",
+        "effect": {
+            "govt": 0,
+            "econ": -10,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": -5
+        }
+    },
+    {
+        "question": "Natural resources discovered beyond settled space should generate a public dividend for every Federation citizen.",
+        "effect": {
+            "govt": 0,
+            "econ": 10,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Competition between private transport networks is preferable to a single publicly operated interstellar service.",
+        "effect": {
+            "govt": 0,
+            "econ": -10,
+            "dipl": 0,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Strong public services are compatible with profitable private enterprise and do not require abolishing private ownership.",
+        "effect": {
+            "govt": 0,
+            "econ": 10,
+            "dipl": 0,
+            "synd": -5,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "The Federation must be willing to strike beyond its borders before distant threats become immediate ones.",
+        "effect": {
+            "govt": 5,
             "econ": 0,
             "dipl": 10,
             "synd": 0,
@@ -120,10 +240,50 @@ questions = [
         }
     },
     {
-        "question": "Workers should collectively control the enterprises, stations, and vessels in which they work.",
+        "question": "Exploration vessels operating beyond Federation space should routinely travel under armed military escort.",
         "effect": {
             "govt": 0,
             "econ": 0,
+            "dipl": 10,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Most inhabited worlds should provide for their own defence instead of depending on fleets controlled from Sol.",
+        "effect": {
+            "govt": -5,
+            "econ": 0,
+            "dipl": -10,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "A clear demonstration of overwhelming force often prevents more bloodshed than prolonged negotiation.",
+        "effect": {
+            "govt": 0,
+            "econ": 0,
+            "dipl": 10,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Armed forces should be organized chiefly around protecting habitats, evacuation routes, and civilian infrastructure.",
+        "effect": {
+            "govt": 0,
+            "econ": 0,
+            "dipl": -10,
+            "synd": 0,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Workers should collectively control the enterprises, stations, and vessels in which they work.",
+        "effect": {
+            "govt": 0,
+            "econ": 5,
             "dipl": 0,
             "synd": 10,
             "ordr": 0
@@ -157,6 +317,46 @@ questions = [
             "dipl": 0,
             "synd": -10,
             "ordr": -5
+        }
+    },
+    {
+        "question": "A well-regulated capitalist economy can serve the public interest without transferring ownership to workers or the state.",
+        "effect": {
+            "govt": 0,
+            "econ": 5,
+            "dipl": 0,
+            "synd": -10,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "A federally owned corporation directed by appointed administrators is little better than a private corporation directed by shareholders.",
+        "effect": {
+            "govt": -5,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 10,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Worker syndics should remain answerable to their members, not to federal planning ministries.",
+        "effect": {
+            "govt": -5,
+            "econ": 0,
+            "dipl": 0,
+            "synd": 10,
+            "ordr": 0
+        }
+    },
+    {
+        "question": "Those who risk their savings to establish an enterprise deserve the final say in how it is run.",
+        "effect": {
+            "govt": 0,
+            "econ": 0,
+            "dipl": 0,
+            "synd": -10,
+            "ordr": 0
         }
     },
     {
