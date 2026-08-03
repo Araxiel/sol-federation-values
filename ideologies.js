@@ -46,7 +46,7 @@ const ideologies = [
     },
     {
         "name": "Mutual Defence Compact",
-        "description": "The Mutual Defence Compact favours a Federation of well-prepared communities rather than a military apparatus concentrated at the centre. Compact supporters promote civil defence, reserve fleets, hardened infrastructure, emergency stockpiles, and reciprocal aid agreements between neighbouring systems. They accept collective security but distrust expeditionary warfare, permanent commands, and the tendency of distant admirals to discover that every local problem requires a federal solution.",
+        "description": "The Mutual Defence Compact favours a Federation of well-prepared communities rather than a military apparatus concentrated at the centre. Compact supporters promote civil defence, reserve fleets, hardened infrastructure, emergency stockpiles, and reciprocal aid agreements between neighbouring systems. They accept collective security but distrust expeditionary warfare and permanent, federal garrisons, seeing them as a drain on local resources and a source of political tension.",
         "stats": { "econ": 60, "mili": 5, "govt": 25, "synd": 50, "univ": 90 }
     },
     {

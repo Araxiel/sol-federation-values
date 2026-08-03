@@ -56,7 +56,7 @@ questions = [
     },
     {
         "id": "05",
-        "question": "\"No world should be ruled by people who cannot see its sky.\"",
+        "question": "\"No system should be ruled by people who have never seen its sun.\"",
         "effect": {
             "govt": -15,
             "econ": 0,
@@ -78,7 +78,7 @@ questions = [
     },
     {
         "id": "60",
-        "question": "Because even a routine jump removes a ship from ordinary contact for 5.5 days, distant systems must be trusted to make more of their own decisions.",
+        "question": "Because a jump to even nearby systems takes 5.5 days, distant systems must be trusted to make more of their own decisions.",
         "effect": {
             "govt": -10,
             "econ": 0,
@@ -386,7 +386,7 @@ questions = [
     },
     {
         "id": "32",
-        "question": "\"One humanity, one Federation, one law.\"",
+        "question": "\"One humanity, one government, one Federation.\"",
         "effect": {
             "govt": 15,
             "econ": 0,
@@ -496,7 +496,7 @@ questions = [
     },
     {
         "id": "61",
-        "question": "Describing the Federation's expansion as the end of a \"Warlord Era\" obscures the fact that many incorporated systems were already stable republics rather than territories awaiting liberation.",
+        "question": "Describing the Federation's expansion as the \"Warlord Era\" obscures the fact that many incorporated systems were already stable republics rather than territories awaiting liberation.",
         "effect": {
             "govt": -10,
             "econ": 0,
@@ -540,7 +540,7 @@ questions = [
     },
     {
         "id": "44",
-        "question": "A clear demonstration of overwhelming force often prevents more bloodshed than prolonged negotiation.",
+        "question": "A clear demonstration of overwhelming force often prevents more bloodshed than prolonged negotiation and low intensity skirmishes.",
         "effect": {
             "govt": 0,
             "econ": 0,
@@ -617,7 +617,7 @@ questions = [
     },
     {
         "id": "51",
-        "question": "Worker syndics should remain answerable to their members, not to federal planning ministries.",
+        "question": "Worker syndics should remain answerable to their members, not to distant planning ministries.",
         "effect": {
             "govt": -5,
             "econ": 0,
