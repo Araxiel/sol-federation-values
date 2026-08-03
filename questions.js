@@ -5,9 +5,9 @@ questions = [
         "effect": {
             "govt": 10,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 5
+            "univ": 5
         }
     },
     {
@@ -16,9 +16,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 15,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -27,9 +27,9 @@ questions = [
         "effect": {
             "govt": 5,
             "econ": 0,
-            "dipl": 10,
+            "mili": 10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -38,9 +38,9 @@ questions = [
         "effect": {
             "govt": 10,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -49,9 +49,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 10,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -60,9 +60,9 @@ questions = [
         "effect": {
             "govt": -15,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -71,9 +71,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 5,
-            "dipl": 0,
+            "mili": 0,
             "synd": 10,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -82,9 +82,9 @@ questions = [
         "effect": {
             "govt": -10,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -93,9 +93,20 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": -10,
+            "mili": -10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
+        }
+    },
+    {
+        "id": "46",
+        "question": "Communication delays of 5.5 days alone justify granting remote colonies broad permanent exemptions from federal oversight.",
+        "effect": {
+            "govt": -10,
+            "econ": 0,
+            "mili": 0,
+            "synd": 0,
+            "univ": 0
         }
     },
     {
@@ -104,9 +115,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 10
+            "univ": 10
         }
     },
     {
@@ -115,9 +126,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": -5,
-            "dipl": 5,
+            "mili": 5,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -126,9 +137,9 @@ questions = [
         "effect": {
             "govt": -10,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -137,9 +148,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 15,
+            "mili": 15,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -148,9 +159,9 @@ questions = [
         "effect": {
             "govt": -5,
             "econ": -10,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": -5
+            "univ": -5
         }
     },
     {
@@ -159,9 +170,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": -15,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -170,9 +181,9 @@ questions = [
         "effect": {
             "govt": -5,
             "econ": 0,
-            "dipl": -10,
+            "mili": -10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -181,9 +192,9 @@ questions = [
         "effect": {
             "govt": 10,
             "econ": 5,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -192,9 +203,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": -15,
+            "mili": -15,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -203,9 +214,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 5,
-            "dipl": 0,
+            "mili": 0,
             "synd": 10,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -214,9 +225,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 10,
+            "mili": 10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -225,9 +236,9 @@ questions = [
         "effect": {
             "govt": 10,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -236,9 +247,9 @@ questions = [
         "effect": {
             "govt": -10,
             "econ": 0,
-            "dipl": 0,
-            "synd": 1,
-            "ordr": 0
+            "mili": 0,
+            "synd": 2,
+            "univ": 0
         }
     },
     {
@@ -247,9 +258,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": -1,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -258,9 +269,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 10,
-            "dipl": 0,
-            "synd": 0,
-            "ordr": 0
+            "mili": 0,
+            "synd": 2,
+            "univ": 0
         }
     },
     {
@@ -269,9 +280,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 20,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -280,9 +291,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": -10,
+            "mili": -10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -291,9 +302,9 @@ questions = [
         "effect": {
             "govt": -10,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -302,9 +313,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 10,
+            "mili": 10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -313,9 +324,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": -15,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -324,9 +335,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 2,
             "synd": 0,
-            "ordr": -10
+            "univ": -10
         }
     },
     {
@@ -335,9 +346,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 5,
-            "dipl": 0,
+            "mili": 0,
             "synd": -10,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -346,9 +357,9 @@ questions = [
         "effect": {
             "govt": 10,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -357,9 +368,9 @@ questions = [
         "effect": {
             "govt": 5,
             "econ": 0,
-            "dipl": 10,
+            "mili": 10,
             "synd": -5,
-            "ordr": 5
+            "univ": 5
         }
     },
     {
@@ -368,9 +379,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 10,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -379,9 +390,9 @@ questions = [
         "effect": {
             "govt": 15,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -390,9 +401,9 @@ questions = [
         "effect": {
             "govt": -5,
             "econ": 0,
-            "dipl": -10,
+            "mili": -10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -401,9 +412,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": -10,
-            "ordr": -5
+            "univ": -5
         }
     },
     {
@@ -412,9 +423,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 10,
-            "dipl": 5,
+            "mili": 5,
             "synd": 5,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -423,9 +434,9 @@ questions = [
         "effect": {
             "govt": -10,
             "econ": 0,
-            "dipl": 0,
-            "synd": 0,
-            "ordr": 0
+            "mili": 0,
+            "synd": 2,
+            "univ": 0
         }
     },
     {
@@ -434,9 +445,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 15
+            "univ": 15
         }
     },
     {
@@ -444,10 +455,10 @@ questions = [
         "question": "A citizen's sexuality or gender, whether determined at birth or chosen later, is a meaningless basis for legal or social distinction.",
         "effect": {
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "govt": 0,
             "synd": 0,
-            "ordr": 10
+            "univ": 10
         }
     },
     {
@@ -456,9 +467,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": -10,
-            "dipl": 0,
+            "mili": 0,
             "synd": -5,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -467,9 +478,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 10,
+            "mili": 10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -478,9 +489,9 @@ questions = [
         "effect": {
             "govt": -5,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 10,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -489,9 +500,9 @@ questions = [
         "effect": {
             "govt": -10,
             "econ": 0,
-            "dipl": -5,
+            "mili": -5,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -500,9 +511,9 @@ questions = [
         "effect": {
             "govt": 10,
             "econ": 5,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -511,9 +522,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 3,
+            "mili": 3,
             "synd": 0,
-            "ordr": -15
+            "univ": -15
         }
     },
     {
@@ -522,9 +533,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": -10,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": -5
+            "univ": -5
         }
     },
     {
@@ -533,9 +544,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 10,
+            "mili": 10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -543,10 +554,10 @@ questions = [
         "question": "Until the Juvan Dominion returns all unlawfully occupied Federation territory, there can be no lasting peace settlement.",
         "effect": {
             "econ": 0,
-            "dipl": 10,
+            "mili": 10,
             "govt": 5,
             "synd": 0,
-            "ordr": -5
+            "univ": -5
         }
     },
     {
@@ -555,31 +566,20 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": -5,
-            "dipl": 0,
+            "mili": 0,
             "synd": -10,
-            "ordr": 0
-        }
-    },
-    {
-        "id": "46",
-        "question": "Communication delays alone justify granting remote colonies broad permanent exemptions from federal oversight.",
-        "effect": {
-            "govt": -10,
-            "econ": 0,
-            "dipl": 0,
-            "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
         "id": "47",
-        "question": "Prosperous core systems have a duty to subsidize struggling settlements on the frontier.",
+        "question": "Prosperous systems have a duty to subsidize struggling settlements across the federation.",
         "effect": {
             "govt": 5,
             "econ": 10,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -588,9 +588,9 @@ questions = [
         "effect": {
             "govt": -10,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -599,9 +599,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 10,
-            "dipl": 0,
+            "mili": 0,
             "synd": -5,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -610,9 +610,9 @@ questions = [
         "effect": {
             "govt": -5,
             "econ": 0,
-            "dipl": -10,
+            "mili": -10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -621,9 +621,9 @@ questions = [
         "effect": {
             "govt": -5,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 10,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -632,9 +632,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 10
+            "univ": 10
         }
     },
     {
@@ -643,9 +643,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": -10,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -654,9 +654,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": -10,
+            "mili": -10,
             "synd": 0,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -665,9 +665,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": -10,
-            "ordr": 0
+            "univ": 0
         }
     },
     {
@@ -676,9 +676,9 @@ questions = [
         "effect": {
             "govt": 0,
             "econ": 0,
-            "dipl": 0,
+            "mili": 0,
             "synd": 0,
-            "ordr": -10
+            "univ": -10
         }
     }
 ];

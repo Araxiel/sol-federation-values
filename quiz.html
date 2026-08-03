@@ -29,13 +29,13 @@
 
 <!-- JavaScript for the test itself -->
 <script>
-    var max_econ, max_dipl, max_govt, max_ordr, max_synd; // Max possible scores
-    max_econ = max_dipl = max_govt = max_ordr = max_synd = 0;
+    var max_econ, max_mili, max_govt, max_univ, max_synd; // Max possible scores
+    max_econ = max_mili = max_govt = max_univ = max_synd = 0;
     let econ_array = new Array(questions.length);
-    let dipl_array = new Array(questions.length);
+    let mili_array = new Array(questions.length);
     let govt_array = new Array(questions.length);
     let synd_array = new Array(questions.length);
-    let ordr_array = new Array(questions.length);
+    let univ_array = new Array(questions.length);
     const answerButtons = Array.from(document.querySelectorAll("[data-answer-button]"));
     const standardAnswers = [
         { label: "Strongly Agree", multiplier: 1.0, style: "stronglyAgree" },
@@ -66,10 +66,10 @@
     init_question();
     for (var i = 0; i < questions.length; i++) {
         max_econ += Math.abs(questions[i].effect.econ)
-        max_dipl += Math.abs(questions[i].effect.dipl)
+        max_mili += Math.abs(questions[i].effect.mili)
         max_govt += Math.abs(questions[i].effect.govt)
         max_synd += Math.abs(questions[i].effect.synd)
-        max_ordr += Math.abs(questions[i].effect.ordr)
+        max_univ += Math.abs(questions[i].effect.univ)
     }
     function init_question() {
         document.getElementById("question-text").textContent = questions[qn].question;
@@ -94,10 +94,10 @@
 
     function next_question(mult) {
         econ_array[qn] = mult*questions[qn].effect.econ
-        dipl_array[qn] = mult*questions[qn].effect.dipl
+        mili_array[qn] = mult*questions[qn].effect.mili
         govt_array[qn] = mult*questions[qn].effect.govt
         synd_array[qn] = mult*questions[qn].effect.synd
-        ordr_array[qn] = mult*questions[qn].effect.ordr
+        univ_array[qn] = mult*questions[qn].effect.univ
         qn++;
         if (qn < questions.length) {
             init_question();
@@ -123,16 +123,16 @@
 
     function results() {
         let final_econ = econ_array.reduce((a, b) => a + b, 0)
-        let final_dipl = dipl_array.reduce((a, b) => a + b, 0)
+        let final_mili = mili_array.reduce((a, b) => a + b, 0)
         let final_govt = govt_array.reduce((a, b) => a + b, 0)
         let final_synd = synd_array.reduce((a, b) => a + b, 0)
-        let final_ordr = ordr_array.reduce((a, b) => a + b, 0)
+        let final_univ = univ_array.reduce((a, b) => a + b, 0)
         location.href = `results.html`
             + `?e=${calc_score(final_econ,max_econ)}`
-            + `&d=${calc_score(final_dipl,max_dipl)}`
+            + `&d=${calc_score(final_mili,max_mili)}`
             + `&g=${calc_score(final_govt,max_govt)}`
             + `&y=${calc_score(final_synd,max_synd)}`
-            + `&o=${calc_score(final_ordr,max_ordr)}`
+            + `&o=${calc_score(final_univ,max_univ)}`
     }
 </script>
 </body>

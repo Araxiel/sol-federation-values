@@ -49,10 +49,10 @@
 
     const scores = {
         econ: readScore("e"),
-        dipl: readScore("d"),
+        mili: readScore("d"),
         govt: readScore("g"),
         synd: readScore("y"),
-        ordr: readScore("o")
+        univ: readScore("o")
     }
 
     const axes = [
@@ -80,7 +80,7 @@
             name: "Security",
             left: valueDefinitions.militarism,
             right: valueDefinitions.defencism,
-            leftScore: scores.dipl,
+            leftScore: scores.mili,
             leftColor: "--axis-militarism",
             rightColor: "--axis-defencism",
             leftIcon: "value_images/militarism.svg",
@@ -100,7 +100,7 @@
             name: "Civic Order",
             left: valueDefinitions.feudalism,
             right: valueDefinitions.universalism,
-            leftScore: 100 - scores.ordr,
+            leftScore: 100 - scores.univ,
             leftColor: "--axis-feudalism",
             rightColor: "--axis-universalism",
             leftIcon: "value_images/feudalism.svg",
